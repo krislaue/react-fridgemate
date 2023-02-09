@@ -19,6 +19,14 @@ function SettingsScreen() {
   );
 }
 
+function FridgeScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Fridge!</Text>
+    </View>
+  );
+}
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -27,6 +35,8 @@ export default function App() {
       <Tab.Navigator>
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="Fridge" component={FridgeScreen} />
+
       </Tab.Navigator>
     </NavigationContainer>
   );

@@ -148,7 +148,8 @@ const getMealData = async () => {
   return (
         <View>
       <Text>Macros</Text>
-      <Text>{JSON.stringify(mealData["recipes"][0].title)}</Text>
+      <Text>{JSON.stringify(mealData)}</Text>
+        {/*mealData["recipes"][0].title)*/}
 {/*        <li>Carbohydrates: {mealData.nutrients.carbohydrates.toFixed(0)}</li>
         <li>Fat: {mealData.nutrients.fat.toFixed(0)}</li>
         <li>Protein: {mealData.nutrients.protein.toFixed(0)}</li>*/}

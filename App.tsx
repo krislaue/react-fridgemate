@@ -7,6 +7,17 @@ import {useEffect, useState} from 'react';
 import {ActivityIndicator, FlatList} from 'react-native';
 import {TouchableOpacity } from 'react-native';
 import MealList from "./MealList";
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 22,
+  },
+  item: {
+    padding: 10,
+    fontSize: 18,
+    height: 44,
+  },
+});
 // import Button from 'react-bootstrap/Button';
 // import Card from 'react-bootstrap/Card';
 
@@ -124,6 +135,25 @@ function SettingsScreen() {
 }
 
 function FridgeScreen() {
+    return (
+    <View style={styles.container}>
+      <FlatList
+        data={[
+          {key: 'Devin'},
+          {key: 'Dan'},
+          {key: 'Dominic'},
+          {key: 'Jackson'},
+          {key: 'James'},
+          {key: 'Joel'},
+          {key: 'John'},
+          {key: 'Jillian'},
+          {key: 'Jimmy'},
+          {key: 'Julie'},
+        ]}
+        renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+      />
+    </View>
+  );
   // fetch('https://api.spoonacular.com/recipes/random?apiKey=ad6b49472d7e4267891b4a52dcc07a2c&number=1&tags=vegetarian,dessert')
   // .then((response) => response.json())
   // .then((data) => {
@@ -133,6 +163,10 @@ function FridgeScreen() {
   // .catch(() => {
   //   console.log("error");
   // });
+
+}
+
+function SearchScreen() {
 const [mealData, setMealData] = useState({});
 
 useEffect(() => {
@@ -156,25 +190,6 @@ const getMealData = async () => {
 
 
     </View>    
-  );
-}
-
-function SearchScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Search!</Text>
-{/*          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>*/}
-    </View>
   );
 }
 
